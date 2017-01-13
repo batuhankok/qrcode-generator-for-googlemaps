@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>QR Code Generator (open GoogleMaps)</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        //Getting url parameters function
+        function getQueryParams(qs) {
+            qs = qs.split('+').join(' ');
+            var params = {}, tokens, re = /[?&]?([^=]+)=([^&]*)/g;
+            while (tokens = re.exec(qs)) { params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]); }
+            return params;
+        }
+        
+        $(document).ready(function(){
+            var query = getQueryParams(document.location.search);
+            if(query.lat > 0){
+                var url = 'http://maps.google.com/maps?q='+query.lat+','+query.lon;
+                var size = query.size;
+                $('#qrcode').html('<center><img src="https://chart.googleapis.com/chart?chs='+size+'&cht=qr&chl='+encodeURIComponent(url)+'"></center>');
+            }
+        });
+    </script>
+    
+    <style>
+        *{ box-sizing: border-box; }
+        body{ margin: 20px auto; font-family: sans-serif; background-color: #fafafa; }
+        #container{ position:absolute; top:50%; left:50%; padding:15px; -ms-transform: translateX(-50%) translateY(-50%); -webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%); width: 250px; min-height: 100px; border: 2px solid #ddd; background-color: #fff; border-radius: 3px; }
+        input[type="text"]{ width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 3px; margin-bottom: 10px; }
+        input[type="submit"]{ width: 100%; padding: 10px; background: #fafafa; cursor: pointer; font-weight: bold; border: 1px solid #ccc; border-radius: 3px; margin-bottom: 10px; color: #999; }
+        input[type="submit"]:hover{ background: #F0F0F0; color: #999; }
+        select{ width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 3px; margin-bottom: 10px; }
+    </style>
+
+</head>
+
+<body>
+ 
+    <div id="container">
+      
+        <form action="" method="get">
+            
+            <input type="text" name="lat" value="41.008238" placeholder="Latitude of the Location">
+            
+            <br />
+            
+            <input type="text" name="lon" value="28.978359" placeholder="Longitude of the Location">
+            
+            <br />
+            
+            <select name="size">
+                <option value="80x80">80x80 pixel.</option>
+                <option value="120x120">120x120 pixel.</option>
+                <option value="180x180">180x180 pixel.</option>
+                <option value="240x240">240x240 pixel.</option>
+            </select>
+            
+            <br />
+            
+            <input type="submit" value="Create the QR Code!">
+            
+        </form>
+        
+        <div id="qrcode">
+        </div>
+      
+    </div>
+    
+</body>
+
+</html>
