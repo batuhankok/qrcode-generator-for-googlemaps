@@ -8,12 +8,12 @@
 ## Creating a QR Code which opens GoogleMaps!
 This little page generates a QR Code for your location. These generated QR Codes open GoogleMaps and add pin your location on the map when someone captures these by any application on the mobile phone.
 <br />
-<a href="http://batuhan.me/qrcode-generator-for-googlemaps/">Too see live demo, click here!</a>
+<a href="https://github.com/batuhankok/qrcode-generator-for-googlemaps#live-screenshot">Too see the screenshot, click here!</a>
 
 ## Turkish: Lokasyonlar için QR Kod Üretici (GoogleMaps Üzerinden)
 Bu basit uygulama sayesinde, enlem ve boylam bilgilerini girerek Qr Kod (kare kod)'lar üretebilirsiniz. Bu kare kodlar okutulduğunda otomatik olarak GoogleMaps açılacak ve girdiğiniz adrese pin eklenecektir. Böylece insanlara lokasyonunuzu daha kolay bir şekilde gösterebilirsiniz. 
 <br />
-<a href="http://batuhan.me/qrcode-generator-for-googlemaps/">Canlı demo burada!</a>
+<a href="https://github.com/batuhankok/qrcode-generator-for-googlemaps#live-screenshot">Önizlemeyi görmek için tıklayın!</a>
 
 ## Live Screenshot
 ![SS](https://github.com/batuhankok/qrcode-generator-for-googlemaps/blob/master/screen.gif?raw=true)
